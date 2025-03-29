@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.58462fbc.css",
+    "main.js": "/portfolio/static/js/main.46e4764f.js",
+    "static/media/my.png": "/portfolio/static/media/my.3e94a5c80f1092fa5598.png",
+    "static/media/u-said-it-v13-1167.mp3": "/portfolio/static/media/u-said-it-v13-1167.becd66496be9c81ddf9d.mp3",
+    "static/media/spaceman.png": "/portfolio/static/media/spaceman.5ec7fcfa9a803ead726c.png",
+    "index.html": "/portfolio/index.html",
+    "main.58462fbc.css.map": "/portfolio/static/css/main.58462fbc.css.map",
+    "main.46e4764f.js.map": "/portfolio/static/js/main.46e4764f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58462fbc.css",
+    "static/js/main.46e4764f.js"
+  ]
+}
