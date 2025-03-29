@@ -39,6 +39,7 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
+          rel="noreferrer noopener"
           href={"https://github.com/TusharxSingh"}
         >
           <Github
@@ -56,6 +57,7 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
+          rel="noreferrer noopener"
           href={"https://leetcode.com/u/tusharrr23/"}
         >
           <Leetcode
