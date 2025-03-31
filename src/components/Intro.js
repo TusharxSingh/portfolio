@@ -61,22 +61,9 @@ const ImageContainer = styled(motion.div)`
 
   .pic {
     width: 90%;
-    max-width: 300px;
-    height: auto;
+    max-height: 100%;
     object-fit: contain;
     display: block;
-
-    @media (max-width: 1024px) {
-      width: 80%;
-    }
-
-    @media (max-width: 768px) {
-      width: 70%;
-    }
-
-    @media (max-width: 480px) {
-      width: 60%;
-    }
   }
 `;
 
