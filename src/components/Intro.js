@@ -26,6 +26,12 @@ const Box = styled(motion.div)`
   border-left: 2px solid ${(props) => props.theme.body};
   border-right: 2px solid ${(props) => props.theme.text};
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 90vw;
+    height: auto;
+    flex-direction: column;
+  }
 `;
 
 const SubBox = styled.div`
@@ -34,6 +40,11 @@ const SubBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem;
+  }
 `;
 
 const Text = styled.div`
@@ -60,10 +71,16 @@ const ImageContainer = styled(motion.div)`
   height: 100%;
 
   .pic {
-    width: 90%; /* Reduce width slightly */
-    max-height: 100%; /* Prevent excessive height */
-    object-fit: contain; /* Ensure it fits well */
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
     display: block;
+
+    @media (max-width: 768px) {
+      width: 60%;
+      max-width: 200px;
+    }
   }
 `;
 
