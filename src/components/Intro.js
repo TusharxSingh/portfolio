@@ -26,6 +26,11 @@ const Box = styled(motion.div)`
   border-left: 2px solid ${(props) => props.theme.body};
   border-right: 2px solid ${(props) => props.theme.text};
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 85vw;
+    height: 60vh;
+  }
 `;
 
 const SubBox = styled.div`
@@ -34,6 +39,13 @@ const SubBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    &:last-child {
+      display: none;
+    }
+  }
 `;
 
 const Text = styled.div`
@@ -50,20 +62,32 @@ const Text = styled.div`
     font-size: calc(0.5rem + 1.5vw);
     font-weight: 300;
   }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const ImageContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 
   .pic {
-    width: 90%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     display: block;
+  }
+
+  @media (max-width: 768px) {
+    align-items: flex-end;
   }
 `;
 
