@@ -38,7 +38,7 @@ function App() {
 
             <Route path="/skills" element={<MySkillsPage />} />
             {/* Below is to catch all the other routes and send the user to main component,
-you can add custom 404 component or message instead of Main component*/}
+you can add custom 404 component or a message instead of Main component*/}
             <Route path="*" element={<Main />} />
           </Routes>
         </AnimatePresence>
