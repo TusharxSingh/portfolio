@@ -33,9 +33,6 @@ const Box = styled(motion.div)`
     height: auto;
     top: 45%;
     transform: translate(-50%, -45%);
-    border-left: none;
-    border-right: none;
-    background: none;
   }
 `;
 
@@ -48,6 +45,9 @@ const SubBox = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+    &:last-child {
+      display: flex;
+    }
   }
 `;
 
@@ -55,20 +55,20 @@ const Text = styled.div`
   font-size: calc(1em + 1.5vw);
   color: #D46A00;
   padding: 2rem;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
-  & > h6 {
-    color: #D46A00;
-    font-size: calc(0.5rem + 1.2vw);
+  & > *:last-child {
+    color: rgba(212, 106, 0, 0.6); /* Slight transparency */
+    font-size: calc(0.5rem + 1.5vw);
     font-weight: 300;
   }
 
   @media (max-width: 768px) {
     align-items: center;
     text-align: center;
-    padding: 1.5rem;
   }
 `;
 
