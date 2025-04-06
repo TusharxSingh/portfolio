@@ -28,8 +28,11 @@ const Box = styled(motion.div)`
   z-index: 1;
 
   @media (max-width: 768px) {
-    width: 85vw;
-    height: 60vh;
+    flex-direction: column;
+    width: 90vw;
+    height: auto;
+    top: 45%;
+    transform: translate(-50%, -45%);
   }
 `;
 
@@ -43,7 +46,7 @@ const SubBox = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     &:last-child {
-      display: none;
+      display: flex;
     }
   }
 `;
@@ -78,16 +81,18 @@ const ImageContainer = styled(motion.div)`
   overflow: hidden;
 
   .pic {
-    width: auto;
+    width: 80%;
     height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 250px;
     object-fit: contain;
     display: block;
   }
 
   @media (max-width: 768px) {
-    align-items: flex-end;
+    .pic {
+      max-width: 60%;
+      margin-top: 1rem;
+    }
   }
 `;
 
@@ -95,7 +100,7 @@ const Intro = () => {
   return (
     <Box
       initial={{ height: 0 }}
-      animate={{ height: '55vh' }}
+      animate={{ height: window.innerWidth > 768 ? '55vh' : 'auto' }}
       transition={{ type: 'spring', duration: 2, delay: 1 }}
     >
       <SubBox>
