@@ -41,7 +41,7 @@ export const Leetcode = (props) => {
     <svg
       aria-hidden="true"
       data-prefix="fab"
-      data-icon="leetcode-icon"
+      data-icon="leetcode-svgrepo-com"
       className="prefix__svg-inline--fa prefix__fa-leetcode prefix__fa-w-16"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
