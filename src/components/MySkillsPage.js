@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import {lightTheme} from './Themes';
-import { Design, Develope} from './AllSvgs';
+import {  Develope} from './AllSvgs';
 
 
 import LogoComponent from '../subComponents/LogoComponent';
