@@ -81,16 +81,22 @@ const ImageContainer = styled(motion.div)`
   overflow: hidden;
 
   .pic {
-    width: 80%;
+    /* Responsive image: always fit inside the box without distortion */
+    width: auto;
     height: auto;
-    max-width: 250px;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     display: block;
   }
 
   @media (max-width: 768px) {
+    height: auto;
     .pic {
-      max-width: 60%;
+      /* When the layout stacks, keep a reasonable image size */
+      width: min(70vw, 320px);
+      max-width: 70vw;
+      max-height: 40vh;
       margin-top: 1rem;
     }
   }
