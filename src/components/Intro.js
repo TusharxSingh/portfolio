@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Me from '../assets/Images/my.png';
+import Me from '../assets/Images/my.webp';
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -80,6 +80,19 @@ const ImageContainer = styled(motion.div)`
   height: 100%;
   overflow: hidden;
 
+  .placeholder {
+    width: min(28vw, 260px);
+    aspect-ratio: 1 / 1;
+    border-radius: 999px;
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(212, 106, 0, 0.35),
+      rgba(212, 106, 0, 0.08) 55%,
+      rgba(212, 106, 0, 0.02) 100%
+    );
+    border: 1px solid rgba(212, 106, 0, 0.25);
+  }
+
   .pic {
     /* Responsive image: always fit inside the box without distortion */
     width: auto;
@@ -88,10 +101,16 @@ const ImageContainer = styled(motion.div)`
     max-height: 100%;
     object-fit: contain;
     display: block;
+    transition: opacity 250ms ease;
   }
 
   @media (max-width: 768px) {
     height: auto;
+    .placeholder {
+      width: min(70vw, 320px);
+      max-height: 40vh;
+      margin-top: 1rem;
+    }
     .pic {
       /* When the layout stacks, keep a reasonable image size */
       width: min(70vw, 320px);
@@ -103,6 +122,8 @@ const ImageContainer = styled(motion.div)`
 `;
 
 const Intro = () => {
+  const [imgLoaded, setImgLoaded] = React.useState(false);
+
   return (
     <Box
       initial={{ height: 0 }}
@@ -122,7 +143,17 @@ const Intro = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          <img className="pic" src={Me} alt="Profile Pic" />
+          {!imgLoaded && <div className="placeholder" aria-hidden="true" />}
+          <img
+            className="pic"
+            src={Me}
+            alt="Profile Pic"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            onLoad={() => setImgLoaded(true)}
+            style={{ opacity: imgLoaded ? 1 : 0, position: imgLoaded ? 'static' : 'absolute' }}
+          />
         </ImageContainer>
       </SubBox>
     </Box>
