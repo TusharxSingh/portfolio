@@ -9,6 +9,7 @@ import Main from "./components/Main";
 import AboutPage from "./components/AboutPage";
 
 import MySkillsPage from "./components/MySkillsPage";
+import WorkPage from "./components/WorkPage";
 import SoundBar from "./subComponents/SoundBar";
 
 function App() {
@@ -31,10 +32,7 @@ function App() {
             <Route path="/" element={<Main />} />
 
             <Route path="/about" element={<AboutPage />} />
-
-            
-
-            
+            <Route path="/work" element={<WorkPage />} />
 
             <Route path="/skills" element={<MySkillsPage />} />
             {/* Below is to catch all the other routes and send the user to main component,
