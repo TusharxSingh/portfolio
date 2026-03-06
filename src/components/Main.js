@@ -22,6 +22,12 @@ h2,h3,h4,h5,h6{
   font-family:'Karla', sans-serif ;
   font-weight:500;
 }
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+}
 `
 
 const Container = styled.div`
@@ -68,6 +74,12 @@ left: calc(1rem + 2vw);
 transform: translate(-50%, -50%) rotate(-90deg) ;
 text-decoration: none;
 z-index:1;
+
+@media (max-width: 768px) {
+  color: ${props => props.theme.body}; /* Force white color on mobile due to black split background */
+  left: 1.5rem;
+  text-shadow: 0 0 4px #000;
+}
 `
 
 const rotate = keyframes`
@@ -208,9 +220,9 @@ const Main = () => {
 
                 </BottomBar>
 
-            </Container>
+            </Container >
             {click ? <Intro click={click} /> : null}
-        </MainContainer>
+        </MainContainer >
     )
 }
 
